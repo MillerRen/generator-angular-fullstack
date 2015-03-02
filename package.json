@@ -1,6 +1,6 @@
 {
-  "name": "generator-angular-fullstack",
-  "version": "2.0.13",
+  "name": "generator-my-angel",
+  "version": "1.0.0",
   "description": "Yeoman generator for creating MEAN stack applications, using MongoDB, Express, AngularJS, and Node",
   "keywords": [
     "yeoman-generator",
@@ -15,12 +15,12 @@
     "front-end",
     "app"
   ],
-  "homepage": "https://github.com/DaftMonk/generator-angular-fullstack",
-  "bugs": "https://github.com/DaftMonk/generator-angular-fullstack/issues",
+  "homepage": "https://github.com/MillerRen/generator-my-angel.git",
+  "bugs": "https://github.com/MillerRen/generator-my-angel.git/issues",
   "author": "Tyler Henkel",
   "repository": {
     "type": "git",
-    "url": "git://github.com/DaftMonk/generator-angular-fullstack.git"
+    "url": "https://github.com/MillerRen/generator-my-angel.git"
   },
   "scripts": {
     "test": "grunt test"
