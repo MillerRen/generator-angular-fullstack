@@ -42,6 +42,9 @@ module.exports = function(app) {
     store: new mongoStore({ mongoose_connection: mongoose.connection })
   }));
   <% } %>
+
+  app.use(express.static(path.join(config.root, 'bower_components')));
+
   if ('production' === env) {
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
     app.use(express.static(path.join(config.root, 'public')));
