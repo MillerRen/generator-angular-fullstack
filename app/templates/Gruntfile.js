@@ -262,8 +262,28 @@ module.exports = function (grunt) {
         src: '<%%= yeoman.client %>/index.html',
         ignorePath: '<%%= yeoman.client %>/',
         exclude: [/bootstrap-sass-official/, /bootstrap.js/, '/json3/', '/es5-shim/'<% if(!filters.css) { %>, /bootstrap.css/, /font-awesome.css/ <% } %>]
+      },
+
+      // Automatically inject Bower components into the karma config 
+      test: {
+        src: 'karma.conf.js',
+        devDependencies:true,
+        exclude: [/angular-scenario/],
+        fileTypes: {
+          js: {
+            block: /(([\s\t]*)\/\/\s*bower:*(\S*))(\n|\r|.)*?(\/\/\s*endbower)/gi,
+            detect: {
+              js: /'(.*\.js)'/gi
+            },
+            replace: {
+              js: '\'{{filePath}}\','
+            }
+          }
+        }
       }
     },
+
+
 
     // Renames files for browser caching purposes
     rev: {
@@ -782,6 +802,7 @@ module.exports = function (grunt) {
         'injector:sass', <% } %>
         'concurrent:test',
         'injector',
+        'wiredep',
         'autoprefixer',
         'karma'
       ]);

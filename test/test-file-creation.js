@@ -7,7 +7,7 @@ var expect = chai.expect;
 var fs = require('fs-extra');
 var exec = require('child_process').exec;
 
-describe('angular-fullstack generator', function () {
+describe('my-angel generator', function () {
   var gen, defaultOptions = {
     script: 'js',
     markup: 'html',
@@ -25,7 +25,7 @@ describe('angular-fullstack generator', function () {
     gen.run({}, function () {
       var afGenerator;
       var deps = [path.join('../..', generatorType)];
-      afGenerator = helpers.createGenerator('angular-fullstack:' + generatorType, deps, [name]);
+      afGenerator = helpers.createGenerator('my-angel:' + generatorType, deps, [name]);
 
       helpers.mockPrompt(afGenerator, mockPrompt);
       afGenerator.run([], function () {
@@ -49,7 +49,7 @@ describe('angular-fullstack generator', function () {
         return done(err);
       }
 
-      gen = helpers.createGenerator('angular-fullstack:app', deps);
+      gen = helpers.createGenerator('my-angel:app', deps);
       gen.options['skip-install'] = true;
       done();
     }.bind(this));
@@ -61,7 +61,7 @@ describe('angular-fullstack generator', function () {
       this.timeout(20000);
       fs.mkdirSync(__dirname + '/temp/client');
       fs.symlinkSync(__dirname + '/fixtures/node_modules', __dirname + '/temp/node_modules');
-      fs.symlinkSync(__dirname +'/fixtures/bower_components', __dirname +'/temp/client/bower_components');
+      fs.symlinkSync(__dirname +'/fixtures/bower_components', __dirname +'/temp/bower_components');
     });
 
     describe('with default options', function() {
@@ -112,7 +112,7 @@ describe('angular-fullstack generator', function () {
       it('should use existing config if available', function(done) {
         this.timeout(60000);
         fs.copySync(__dirname + '/fixtures/.yo-rc.json', __dirname + '/temp/.yo-rc.json');
-        var gen = helpers.createGenerator('angular-fullstack:app', [
+        var gen = helpers.createGenerator('my-angel:app', [
           '../../app',
           [
             helpers.createDummyGenerator(),
