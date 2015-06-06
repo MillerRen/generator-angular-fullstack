@@ -43,7 +43,7 @@ module.exports = function(app) {
   }));
   <% } %>
 
-  app.use(express.static(path.join(config.root, 'bower_components')));
+  app.use('/bower_components', express.static(path.join(config.root, 'bower_components')));
 
   if ('production' === env) {
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
