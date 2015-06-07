@@ -32,4 +32,21 @@ angular.module '<%= scriptAppName %>'
     templateUrl: 'app/account/settings/settings.html'
     controller: 'SettingsCtrl'
     authenticate: true
+<% } %><% if(filters.routesegment) { %>.config ($routeSegmentProvider) ->
+  $routeSegmentProvider
+  .when '/login',  'login'
+  .segment 'login',
+    templateUrl: 'app/account/login/login.html'
+    controller: 'LoginCtrl'
+
+  .when '/signup', 'signup'
+  .segment 'signup',
+    templateUrl: 'app/account/signup/signup.html'
+    controller: 'SignupCtrl'
+
+  .when '/settings', 'settings'
+  .segment 'settings',
+    templateUrl: 'app/account/settings/settings.html'
+    controller: 'SettingsCtrl'
+    authenticate: true
 <% } %>

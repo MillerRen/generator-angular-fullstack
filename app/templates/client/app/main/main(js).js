@@ -14,4 +14,11 @@ angular.module('<%= scriptAppName %>')
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       });
+  });<% } %><% if(filters.routesegment) { %>.config(function ($routeSegmentProvider) {
+    $routeSegmentProvider
+      .when('/',  'main')
+      .segment('main', {
+        templateUrl: 'app/main/main.html',
+        controller: 'MainCtrl'
+      });
   });<% } %>

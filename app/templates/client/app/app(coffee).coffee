@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module '<%= scriptAppName %>', [<%= angularModules %>]
-<% if(filters.ngroute) { %>.config ($routeProvider, $locationProvider<% if(filters.auth) { %>, $httpProvider<% } %>) ->
+<% if(filters.ngroute||filters.routesegment) { %>.config ($routeProvider, $locationProvider<% if(filters.auth) { %>, $httpProvider<% } %>) ->
   $routeProvider
   .otherwise
     redirectTo: '/'
@@ -33,7 +33,7 @@ angular.module '<%= scriptAppName %>', [<%= angularModules %>]
 
 .run ($rootScope, $location, Auth) ->
   # Redirect to login if route requires auth and you're not logged in
-  $rootScope.$on <% if(filters.ngroute) { %>'$routeChangeStart'<% } %><% if(filters.uirouter) { %>'$stateChangeStart'<% } %>, (event, next) ->
+  $rootScope.$on <% if(filters.ngroute||filters.routesegment) { %>'$routeChangeStart'<% } %><% if(filters.uirouter) { %>'$stateChangeStart'<% } %>, (event, next) ->
     Auth.isLoggedInAsync (loggedIn) ->
       $location.path "/login" if next.authenticate and not loggedIn
 <% } %>

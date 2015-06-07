@@ -14,4 +14,11 @@ angular.module('<%= scriptAppName %>')
         templateUrl: 'app/admin/admin.html',
         controller: 'AdminCtrl'
       });
+  });<% } %><% if(filters.routesegment) { %>.config(function ($routeSegmentProvider) {
+    $routeSegmentProvider
+      .when('/admin', 'admin')
+      .segment('admin', {
+        templateUrl: 'app/admin/admin.html',
+        controller: 'AdminCtrl'
+      });
   });<% } %>

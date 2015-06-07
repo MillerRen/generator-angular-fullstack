@@ -12,4 +12,10 @@ angular.module '<%= scriptAppName %>'
     url: '/admin'
     templateUrl: 'app/admin/admin.html'
     controller: 'AdminCtrl'
+<% } %><% if(filters.routesegment) { %>.config ($routeSegmentProvider) ->
+  $routeSegmentProvider
+  .when '/admin', 'admin'
+  .segment 'admin',
+    templateUrl: 'app/admin/admin.html'
+    controller: 'AdminCtrl'
 <% } %>

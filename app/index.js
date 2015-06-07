@@ -87,16 +87,16 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
       }, {
         type: "list",
         name: "stylesheet",
-        default: 1,
+        default: 3,
         message: "What would you like to write stylesheets with?",
         choices: [ "CSS", "Sass", "Stylus", "Less"],
         filter: function( val ) { return val.toLowerCase(); }
       },  {
         type: "list",
         name: "router",
-        default: 1,
+        default: 2,
         message: "What Angular router would you like to use?",
-        choices: [ "ngRoute", "uiRouter"],
+        choices: [ "ngRoute", "uiRouter","routeSegment"],
         filter: function( val ) { return val.toLowerCase(); }
       }, {
         type: "confirm",
@@ -244,7 +244,9 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
       "'ngResource'",
       "'ngSanitize'"
     ];
-    if(this.filters.ngroute) angModules.push("'ngRoute'");
+    if(this.filters.ngroute||this.filters.routesegment) angModules.push("'ngRoute'");
+    if(this.filters.routesegment) angModules.push("'route-segment'");
+    if(this.filters.routesegment) angModules.push("'view-segment'");
     if(this.filters.socketio) angModules.push("'btford.socket-io'");
     if(this.filters.uirouter) angModules.push("'ui.router'");
     if(this.filters.uibootstrap) angModules.push("'ui.bootstrap'");
