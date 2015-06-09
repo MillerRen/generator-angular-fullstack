@@ -1,3 +1,14 @@
+<a name="v3.2.0"></a>
+## v3.2.0 (2015-06-09)
+
+#### Bug Fixes
+
+ * add wiredep task in test 
+
+#### Dependencies Upgrade
+
+  * upgrade npm packages lastest
+
 <a name="v3.1.1"></a>
 ### v3.1.1 (2015-06-09)
 
