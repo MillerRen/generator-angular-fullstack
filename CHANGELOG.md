@@ -1,3 +1,10 @@
+<a name="v3.1.1"></a>
+### v3.1.1 (2015-06-09)
+
+#### Features
+
+ * **angular-route-segment** for nested routing.
+
 <a name="v2.0.13"></a>
 ### v2.0.13 (2014-08-29)
 
