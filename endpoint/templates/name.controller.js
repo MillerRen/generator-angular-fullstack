@@ -14,7 +14,11 @@ exports.index = function(req, res) {<% if (!filters.mongoose) { %>
 
 // Get a single <%= name %>
 exports.show = function(req, res) {
-    return res.json(req.<%= name %>);
+  <%= classedName %>.findById(req.params.id, function (err, <%= name %>) {
+    if(err) { return handleError(res, err); }
+    if(!<%= name %>) { return res.status(404).send('Not Found'); }
+    return res.json(<%= name %>);
+  });
 };
 
 // Creates a new <%= name %> in the DB.
@@ -28,28 +32,26 @@ exports.create = function(req, res) {
 // Updates an existing <%= name %> in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
-  var updated = _.merge(req.<%= name %>, req.body);
+  <%= classedName %>.findById(req.params.id, function (err, <%= name %>) {
+    if (err) { return handleError(res, err); }
+    if(!<%= name %>) { return res.status(404).send('Not Found'); }
+    var updated = _.merge(<%= name %>, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.status(200).json(<%= name %>);
     });
+  });
 };
 
 // Deletes a <%= name %> from the DB.
 exports.destroy = function(req, res) {
-  req.<%= name %>.remove(function(err) {
+  <%= classedName %>.findById(req.params.id, function (err, <%= name %>) {
+    if(err) { return handleError(res, err); }
+    if(!<%= name %>) { return res.status(404).send('Not Found'); }
+    <%= name %>.remove(function(err) {
       if(err) { return handleError(res, err); }
       return res.status(204).send('No Content');
     });
-};
-
-// Get a single <%= name %>
-exports.findById = function(req, res, next, id) {
-  <%= classedName %>.findById(id, function (err, <%= name %>) {
-    if(err) { return handleError(res, err); }
-    if(!<%= name %>) { return res.status(404).send('Not Found'); }
-    req.<%= name %> = <%= name %>;
-    next();
   });
 };
 
