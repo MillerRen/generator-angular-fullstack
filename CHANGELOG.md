@@ -1,6 +1,13 @@
 <a name="v3.2.0"></a>
 ## v3.2.0 (2015-06-09)
 
+#### Break change
+
+ * replace generator. please replace `.yo-rc.json` generator-ng-component to generator-angularjs-component manually.
+
+<a name="v3.2.0"></a>
+## v3.2.0 (2015-06-09)
+
 #### Bug Fixes
 
  * add wiredep task in test 
