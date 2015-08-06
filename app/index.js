@@ -211,6 +211,7 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
 
     if(this.filters.ngroute) filters.push('ngroute');
     if(this.filters.uirouter) filters.push('uirouter');
+    if(this.filters.routesegment) filters.push('routesegment');
     if(this.filters.coffee) extensions.push('coffee');
     if(this.filters.js) extensions.push('js');
     if(this.filters.html) extensions.push('html');
@@ -228,7 +229,8 @@ var AngularFullstackGenerator = yeoman.generators.Base.extend({
         'serviceDirectory': appPath,
         'filters': filters,
         'extensions': extensions,
-        'basePath': 'client'
+        'basePath': 'client',
+        'routeTemplates': 'my-angel-templates/route'
       }
     }, { local: require.resolve('generator-ng-component/app/index.js') });
   },
