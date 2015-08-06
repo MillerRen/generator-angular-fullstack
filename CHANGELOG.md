@@ -41,7 +41,7 @@
 
 * **app:** Use parentheses to fix string concat in config ([c6a50ce7](http://github.com/DaftMonk/generator-angular-fullstack/commit/c6a50ce791ab633a17654ce9b0090007d7152463), closes [#466](http://github.com/DaftMonk/generator-angular-fullstack/issues/466))
   * improve jshint usage ([35fcf490](http://github.com/DaftMonk/generator-angular-fullstack/commit/35fcf4902dbbdab2ca6b394ab87ef8e3cc3d052b), closes [#463](http://github.com/DaftMonk/generator-angular-fullstack/issues/463), [#486](http://github.com/DaftMonk/generator-angular-fullstack/issues/486))
-* **gen:** use more restrictive version range for ng-component ([19698973](http://github.com/DaftMonk/generator-angular-fullstack/commit/196989730c8922fa5e1dc9caa45eb85052535e30))
+* **gen:** use more restrictive version range for angularjs-component ([19698973](http://github.com/DaftMonk/generator-angular-fullstack/commit/196989730c8922fa5e1dc9caa45eb85052535e30))
 
 
 #### Features
@@ -203,7 +203,7 @@
     * Automate injection of new scripts into index file with grunt
     * Use ng-templates to concatenate all the html/jade views into the javascript payload
 * **gen:**
-    * Abstract client-side generators into generator-ng-component, use new composition feature of yeoman to keep them available in the generator.
+    * Abstract client-side generators into generator-angularjs-component, use new composition feature of yeoman to keep them available in the generator.
     * Add useful tests to the generator, start using travis CI
     * use .yo-rc file to keep track of generated configurations
     * Add endpoint generator to angular-fullstack, generates model / route / controller / test / socket updates

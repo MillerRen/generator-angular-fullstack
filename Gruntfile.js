@@ -148,7 +148,7 @@ module.exports = function (grunt) {
         '../app',
         [
           helpers.createDummyGenerator(),
-          'ng-component:app'
+          'angularjs-component:app'
         ]
       ];
 

@@ -3,7 +3,7 @@ var yeoman = require('yeoman-generator');
 
 var Generator = yeoman.generators.Base.extend({
   compose: function() {
-    this.composeWith('ng-component:provider', {arguments: this.arguments}, { local: require.resolve('generator-ng-component/provider') });
+    this.composeWith('angularjs-component:provider', {arguments: this.arguments}, { local: require.resolve('generator-angularjs-component/provider') });
   }
 });
 

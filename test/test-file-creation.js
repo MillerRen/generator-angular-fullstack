@@ -40,7 +40,7 @@ describe('my-angel generator', function () {
       '../../app',
       [
         helpers.createDummyGenerator(),
-        'ng-component:app'
+        'angularjs-component:app'
       ]
     ];
 
@@ -116,7 +116,7 @@ describe('my-angel generator', function () {
           '../../app',
           [
             helpers.createDummyGenerator(),
-            'ng-component:app'
+            'angularjs-component:app'
           ]
         ]);
         gen.options['skip-install'] = true;
