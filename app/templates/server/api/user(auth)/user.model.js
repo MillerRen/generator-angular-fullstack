@@ -13,6 +13,10 @@ var UserSchema = new Schema({
     default: 'user'
   },
   hashedPassword: String,
+  created_time: {
+    type: Date,
+    default: new Date
+  },
   provider: String,
   salt: String<% if (filters.oauth) { %>,<% if (filters.facebookAuth) { %>
   facebook: {},<% } %><% if (filters.twitterAuth) { %>

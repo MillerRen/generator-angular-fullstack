@@ -6,6 +6,10 @@ var mongoose = require('mongoose'),
 var <%= classedName %>Schema = new Schema({
   name: String,
   info: String,
+  created_time: {
+    type: Date,
+    default: new Date
+  },
   active: Boolean
 });
 
